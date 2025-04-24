@@ -3,4 +3,4 @@ djangorestframework==3.14.0
 drf-yasg==1.21.10
 psycopg2-binary~=2.9.10
 pytest==6.2.5
-pytest-django==4.11.1
+pytest-django==4.4.0
