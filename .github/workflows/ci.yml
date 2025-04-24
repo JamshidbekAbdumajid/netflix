@@ -22,7 +22,8 @@ jobs:
         with:
           python-version: 3.12
       - name: Install Requirements
-        run: pip install -r requirements.txt
+        run: pip install --break-system-packages --use-deprecated=legacy-resolver -r requirements.txt
+
       - name: Run Tests
         run: pytest
       - name: Show installed packages
