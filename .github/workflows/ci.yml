@@ -6,7 +6,7 @@ jobs:
   run-tests:
     services:
       postgres:
-        image: postgres:9.6
+        image: postgres:17
         env:
           POSTGRES_DB: postgres
           POSTGRES_USER: postgres
@@ -25,7 +25,8 @@ jobs:
         run: pip install --break-system-packages --use-deprecated=legacy-resolver -r requirements.txt
 
       - name: Run Tests
-        run: pytest
+        working-directory: netflix
+        run: pytest -v
       - name: Show installed packages
         run: pip list
       - name: Dependencies (flake8)
