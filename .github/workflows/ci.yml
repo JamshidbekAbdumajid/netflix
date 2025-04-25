@@ -19,8 +19,6 @@ jobs:
           --health-timeout 5s
           --health-retries 5
     runs-on: ubuntu-latest
-    env:
-      DJANGO_SETTINGS_MODULE: netflix.settings
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
