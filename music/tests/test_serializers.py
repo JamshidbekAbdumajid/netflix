@@ -20,22 +20,18 @@ class TestActorSerializer(TestCase):
 
 class TestMovieSerializer(TestCase):
     def setUp(self):
+        self.actor = Actor.objects.create(name='Example actor')
         self.movie = Movie.objects.create(name='Example movie',)
 
     def test_is_valid(self):
         data = {
             'id':1,
             'name':'Example movie',
-            'year':'',
-            'imdb':'',
-            'gender':'',
-            'actors': 1
-
+            'year':1990,
+            'imdb':'10',
+            'genre':'Horror',
+            'actors':[self.actor.id],
         }
 
         serializer = MovieSerializer(data=data)
         self.assertTrue(serializer.is_valid())
-
-
-
-
